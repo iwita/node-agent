@@ -1,0 +1,26 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+
+package info;
+
+message PodType {
+    string pod_name = 1;
+}
+message SocketType {
+    int32 socket_id = 1;
+}
+
+message Info {
+    SocketType socket = 1;
+    PodType pod = 2;
+}
+
+message AgentMessage {
+    string body = 1;
+    google.protobuf.Timestamp date = 4;
+}
+
+service tasksetAdvisor {
+    rpc Pin(Info) returns (AgentMessage) {}
+}
+
