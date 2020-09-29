@@ -10,6 +10,7 @@ import (
 )
 
 func main() {
+	//lis, err := net.Listen("tcp", ":4242")
 	lis, err := net.Listen("tcp", ":9000")
 	fmt.Printf("Stef Tsitsipas started Serving on %v\n", lis.Addr().String())
 	if err != nil {

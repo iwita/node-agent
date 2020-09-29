@@ -20,8 +20,8 @@ func main() {
 	c := info.NewTasksetAdvisorClient(conn)
 
 	response, err := c.Pin(context.Background(), &info.Info{
-		Socket: &info.SocketType{SocketId: 1},
-		Pod:    &info.PodType{PodName: "scikit-lasso-pod"},
+		Socket: &info.SocketType{SocketId: 0},
+		Pod:    &info.PodType{PodName: "happy"},
 	})
 
 	if err != nil {
