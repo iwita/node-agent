@@ -21,7 +21,7 @@ func main() {
 
 	response, err := c.Pin(context.Background(), &info.Info{
 		Socket: &info.SocketType{SocketId: 0},
-		Pod:    &info.PodType{PodName: "happy"},
+		Pod:    &info.PodType{PodName: "relaxed"},
 	})
 
 	if err != nil {
