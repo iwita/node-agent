@@ -7,10 +7,8 @@ import (
 	"os/exec"
 	"strconv"
 	"strings"
-	"time"
 
 	"golang.org/x/net/context"
-	"google.golang.org/protobuf/types/known/timestamppb"
 )
 
 type Server struct {
@@ -58,7 +56,7 @@ func (s *Server) Pin(ctx context.Context, in *Info) (*AgentMessage, error) {
 	if err != nil {
 		fmt.Printf("A problem occured while pinning: %v", err)
 	}
-	return &AgentMessage{Body: string(out), Date: timestamppb.New(time.Now())}, nil
+	return &AgentMessage{Body: string(out)}, nil
 }
 
 // func ListContainer(podName string, socketId int) error {
