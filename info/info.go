@@ -19,7 +19,7 @@ var dir string
 
 func init() {
 	dir, _ := os.Getwd()
-	//fmt.Printf("Current dir: %v\n", dir)
+	fmt.Printf("Current dir: %v\n", dir)
 	cmd, err := exec.Command("/bin/sh", dir+"/server/getCores.sh").Output()
 	if err != nil {
 		fmt.Printf("A problem occured while reading core info (lscpu): %v", err)
