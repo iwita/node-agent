@@ -21,7 +21,9 @@ func init() {
 	dir, _ := os.Getwd()
 	fmt.Printf("Current dir: %v\n", dir)
 	//cmd, err := exec.Command("/bin/sh", dir+"/server/getCores.sh").Output()
+	cmd2, err2:= exec.Command("/bin/sh","ls").Output()
 	cmd, err := exec.Command("/bin/sh", "getCores.sh").Output()
+
 	if err != nil {
 		fmt.Printf("A problem occured while reading core info (lscpu): %v", err)
 	}
