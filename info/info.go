@@ -43,7 +43,7 @@ func init() {
 func (s *Server) Pin(ctx context.Context, in *Info) (*AgentMessage, error) {
 	log.Printf("Agent needs to put %v on Socket %v", in.Pod.PodName, in.Socket.SocketId)
 	//ListContainer(in.Pod.PodName, int(in.Socket.SocketId))
-	dir, _ := os.Getwd()
+	//dir, _ := os.Getwd()
 	//fmt.Printf("Pod name: %v\n", in.Pod.PodName)
 	//fmt.Printf("Current dir: %v\n", dir)
 	cmdGo := &exec.Cmd{
