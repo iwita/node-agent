@@ -21,9 +21,7 @@ func init() {
 	dir, _ := os.Getwd()
 	fmt.Printf("Current dir: %v\n", dir)
 	//cmd, err := exec.Command("/bin/sh", dir+"/server/getCores.sh").Output()
-	cmd2, err2:= exec.Command("/bin/sh","-c","ls").Output()
-	fmt.Println(cmd2, err2)
-	cmd, err := exec.Command("/bin/sh", "getCores.sh").Output()
+	cmd, err := exec.Command("/bin/sh", dir + "server/getCores.sh").Output()
 
 	if err != nil {
 		fmt.Printf("A problem occured while reading core info (lscpu): %v", err)
@@ -50,9 +48,9 @@ func (s *Server) Pin(ctx context.Context, in *Info) (*AgentMessage, error) {
 	//fmt.Printf("Pod name: %v\n", in.Pod.PodName)
 	//fmt.Printf("Current dir: %v\n", dir)
 	cmdGo := &exec.Cmd{
-		//Path: dir + "/server/pin.sh",
-		Path: "/server/pin.sh",
-//		Args: []string{dir + "/server/pin.sh", in.Pod.PodName, socketsToCores[int(in.Socket.SocketId)]},
+		Path: dir + "/server/pin.sh",
+//		Path: "/server/pin.sh",
+		Args: []string{dir + "/server/pin.sh", in.Pod.PodName, socketsToCores[int(in.Socket.SocketId)]},
 		Args: []string{"/server/pin.sh", in.Pod.PodName, socketsToCores[int(in.Socket.SocketId)]},
 	}
 
