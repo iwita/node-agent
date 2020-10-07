@@ -21,7 +21,7 @@ func init() {
 	dir, _ := os.Getwd()
 	fmt.Printf("Current dir: %v\n", dir)
 	//cmd, err := exec.Command("/bin/sh", dir+"/server/getCores.sh").Output()
-	cmd2, err2:= exec.Command("/bin/sh","ls").Output()
+	cmd2, err2:= exec.Command("/bin/sh","-c","ls").Output()
 	fmt.Println(cmd2, err2)
 	cmd, err := exec.Command("/bin/sh", "getCores.sh").Output()
 
