@@ -11,4 +11,6 @@ docker update --cpuset-cpus ${CORES} ${CONTAINER_ID}
 if [ $? = 0 ]
 then
   echo "Pin ok"
+else
+  echo "Pin NOT ok"
 fi

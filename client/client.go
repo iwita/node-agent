@@ -11,7 +11,7 @@ import (
 func main() {
 
 	var conn *grpc.ClientConn
-	conn, err := grpc.Dial(":9000", grpc.WithInsecure())
+	conn, err := grpc.Dial(":4242", grpc.WithInsecure())
 	if err != nil {
 		log.Fatalf("did not connect: %s", err)
 	}
@@ -21,7 +21,7 @@ func main() {
 
 	response, err := c.Pin(context.Background(), &info.Info{
 		Socket: &info.SocketType{SocketId: 0},
-		Pod:    &info.PodType{PodName: "relaxed"},
+		Pod:    &info.PodType{PodName: "influx"},
 	})
 
 	if err != nil {
