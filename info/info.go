@@ -24,7 +24,7 @@ func init() {
 	cmd, err := exec.Command("/bin/sh", dir+"/server/getCores.sh").Output()
 
 	if err != nil {
-		fmt.Printf("A problem occured while reading core info (lscpu): %v", err)
+		fmt.Printf("A problem occured while reading core info (lscpu): %v\n", err)
 	}
 	//fmt.Print(string(cmd))
 	for _, line := range strings.Split(string(cmd), "\n") {
