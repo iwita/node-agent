@@ -21,11 +21,11 @@ func main() {
 
 	response, err := c.Pin(context.Background(), &info.Info{
 		Socket: &info.SocketType{SocketId: 0},
-		Pod:    &info.PodType{PodName: "influx"},
+		Pod:    &info.PodType{PodName: "golang"},
 	})
 
 	if err != nil {
-		log.Fatalf("Error when calling Pin: %s", err)
+		log.Fatalf("Error when calling Pin remotely: %s", err)
 	}
 	log.Printf("Response from server: %s", response.Body)
 
